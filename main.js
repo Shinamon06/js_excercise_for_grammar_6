@@ -14,7 +14,7 @@
 // ここに「関数スコープ」の説明を記述する
 
 /* if　や　for等の関数処理を書く {} の中の変数、引数以外の値を {} の外からアクセスすることができる。
-   関数スコープは ver を使用して関数宣言しなければならない。
+   関数内の変数は var,  let ,  const  のいずれの場合でも外部からアクセスできない.
 */
 
 // 課題3: 以下の条件を満たす高階関数を実装してください
@@ -35,7 +35,7 @@
 
 function kadai_3 (age, callback) {
     let message;
-    if(typeof age === 'string') {
+    if(typeof age !== number) {
         message = '数値が入力されていません'
     }　else if(age >= 20) {
         message = '値は20以上です'
@@ -57,6 +57,9 @@ kadai_3(7, function(message) {
     alert(message);
 });
 kadai_3('文字列', function(message) {
+    alert(message);
+});
+kadai_3(true, (message) {
     alert(message);
 });
 
